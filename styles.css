@@ -1,14 +1,15 @@
 /* --- Estilos generales --- */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	text-align: center;
 }
 
 /* --- Contenedor flexible --- */
 .container {
-    width: 90%;
-    max-width: 1200px;
+    width: 100%;
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -21,17 +22,27 @@ body {
 }
 
 /* --- Menú de navegación --- */
+nav {
+    width: 100%;
+    overflow-x: auto; /* Permite desplazamiento horizontal si es necesario */
+    background: #f8f8f8; /* Fondo opcional para visibilidad */
+}
+
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; /* Usa flexbox para alinear en una línea */
-    justify-content: center; /* Centra los elementos */
-    flex-wrap: wrap; /* Evita que se rompa en pantallas pequeñas */
+    display: flex; /* Mantiene los elementos en una línea */
+    justify-content: center; /* Centra los apartados */
+    gap: 15px; /* Espacio entre los apartados */
+    flex-wrap: nowrap; /* Evita que se apilen en móviles */
+    overflow-x: auto; /* Agrega desplazamiento horizontal si es necesario */
+    white-space: nowrap; /* Evita que los textos se dividan */
 }
 
 nav ul li {
-    margin: 0 10px; /* Espaciado entre elementos */
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li a {
@@ -39,28 +50,32 @@ nav ul li a {
     color: #000;
     font-weight: bold;
     padding: 10px 15px;
-    white-space: nowrap; /* Evita que el texto se divida en dos líneas */
+    display: block;
 }
 
-/* --- Sección adaptable --- */
-#quienes-somos {
-    text-align: center;
-    padding: 20px;
-}
-
-/* --- Media Queries para móviles --- */
-@media (max-width: 600px) {
-    nav ul {
-        flex-wrap: nowrap; /* Intenta mantenerlo en una sola línea */
-        overflow-x: auto; /* Agrega desplazamiento horizontal si es necesario */
-        white-space: nowrap;
-    }
-
+/* --- Asegurar alineación correcta en móviles --- */
+@media (max-width: 768px) {
     nav {
-        width: 100%;
-        overflow: hidden;
+        overflow-x: auto; /* Permite desplazamiento si los apartados no caben */
+        white-space: nowrap; /* Mantiene los apartados en línea */
     }
+
+    nav ul {
+        justify-content: flex-start; /* Los alinea a la izquierda si no caben */
+        padding: 0 10px; /* Margen lateral para visibilidad */
+    }
+/* --- Contenedor flexible --- */
+.container {
+	width: 100%;
+	max-width: 100%;
+	margin: 0 auto;
+}
+/* --- Estilos generales --- */
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
 }
 
-}
 
+}
