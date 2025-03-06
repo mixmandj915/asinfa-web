@@ -1,0 +1,66 @@
+/* --- Estilos generales --- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Contenedor flexible --- */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Logo responsivo --- */
+.logo {
+    width: 100%;  /* Ocupará todo el ancho disponible */
+    max-width: 100%; /* Se ajustará al ancho de la pantalla */
+    height: auto; /* Mantendrá la proporción */
+    display: block; /* Evita espacios innecesarios */
+}
+
+/* --- Menú de navegación --- */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Usa flexbox para alinear en una línea */
+    justify-content: center; /* Centra los elementos */
+    flex-wrap: wrap; /* Evita que se rompa en pantallas pequeñas */
+}
+
+nav ul li {
+    margin: 0 10px; /* Espaciado entre elementos */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    padding: 10px 15px;
+    white-space: nowrap; /* Evita que el texto se divida en dos líneas */
+}
+
+/* --- Sección adaptable --- */
+#quienes-somos {
+    text-align: center;
+    padding: 20px;
+}
+
+/* --- Media Queries para móviles --- */
+@media (max-width: 600px) {
+    nav ul {
+        flex-wrap: nowrap; /* Intenta mantenerlo en una sola línea */
+        overflow-x: auto; /* Agrega desplazamiento horizontal si es necesario */
+        white-space: nowrap;
+    }
+
+    nav {
+        width: 100%;
+        overflow: hidden;
+    }
+}
+
+}
+
